@@ -8,8 +8,6 @@ app:
       - "/api/v1/auth/**"
       - "/webhook/**"
       - "/actuator/**"
-  jwt:
-    secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
 
   # Rate-Limiter configuration    
   rate-limit:

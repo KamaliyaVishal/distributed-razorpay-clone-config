@@ -71,3 +71,7 @@ app:
       order: orders.events
       refund: refunds.events
       settlement: settlements.events
+
+# jwt topics Configurations
+  jwt:
+    secret-key: JWBq9AucykfpPXuwGELWOH3VG0sOOzso6IjAUG4jyIf
