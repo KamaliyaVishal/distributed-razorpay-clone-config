@@ -5,5 +5,5 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/razorpay-merchant-db
 
-webhoook:
+webhook:
   secret-encryption-key: jEbSy97ac+f1IDJCbVEMOZ4CJ2VzScYQljWrkxwyVWs=
