@@ -7,3 +7,4 @@ spring:
 
 vault:
   master-key: sKrpKUIxLLE1j9MBbYnPknL62c8kEbrBWflPVY7bxt6
+  random-key-length: 12
