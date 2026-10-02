@@ -14,6 +14,8 @@ app:
     use-case:
       api-key:
         requests-per-minute: 200
+    jwt:
+      secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
 
 spring.cloud.gateway.server.webmvc:
   routes:
@@ -37,5 +39,3 @@ spring.cloud.gateway.server.webmvc:
       predicates:
         - Path=/webhook/**
 
-jwt:
-  secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
