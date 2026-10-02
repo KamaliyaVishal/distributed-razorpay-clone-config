@@ -11,10 +11,10 @@ app:
 
   # Rate-Limiter configuration    
   rate-limit:
-    method: fixed
+    method: fixed # Options: "fixed", "sliding", "sliding-lua", or "bucket"
     use-case:
       api-key:
-        requests-per-minute: 200
+        requests-per-minute: 60
 
 # Routes configuration    
 spring.cloud.gateway.server.webmvc:
