@@ -80,10 +80,3 @@ app:
   rate-limit:
     method: fixed # Options: "fixed", "sliding", "sliding-lua", or "bucket"
 
-  app:
-  security:
-    trust-inbound-headers: false
-    public-routes:
-      - "/api/v1/auth/**"
-      - "/webhook/**"
-      - "/actuator/**"
