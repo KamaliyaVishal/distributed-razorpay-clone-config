@@ -75,3 +75,7 @@ app:
 # jwt topics Configurations
   jwt:
     secret-key: JWBq9AucykfpPXuwGELWOH3VG0sOOzso6IjAUG4jyIf
+
+  # Rate-Limiter configuration    
+  rate-limit:
+    method: fixed # Options: "fixed", "sliding", "sliding-lua", or "bucket"
