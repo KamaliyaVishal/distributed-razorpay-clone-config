@@ -8,15 +8,17 @@ app:
       - "/api/v1/auth/**"
       - "/webhook/**"
       - "/actuator/**"
-      
+  jwt:
+    secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
+
+  # Rate-Limiter configuration    
   rate-limit:
     method: fixed
     use-case:
       api-key:
         requests-per-minute: 200
-    jwt:
-      secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
 
+# Routes configuration    
 spring.cloud.gateway.server.webmvc:
   routes:
     - id: merchant-service
