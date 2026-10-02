@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+app:
+  security:
+    trust-inbound-headers: false
+    public-routes:
+      - "/api/v1/auth/**"
+      - "/webhook/**"
+      - "/actuator/**"
+      
+  rate-limit:
+    method: fixed
+    use-case:
+      api-key:
+        requests-per-minute: 200
+
+spring.cloud.gateway.server.webmvc:
+  routes:
+    - id: merchant-service
+      uri: lb://merchant-service
+      predicates:
+        - Path=/api/v1/auth/**, /api/v1/merchants/**
+
+    - id: payment-service
+      uri: lb://payment-service
+      predicates:
+        - Path=/api/v1/orders/**, /api/v1/payments/**
+
+    - id: vault-service
+      uri: lb://vault-service
+      predicates:
+        - Path=/api/v1/vault/**
+
+    - id: operations-service
+      uri: lb://operations-service
+      predicates:
+        - Path=/webhook/**
+
+jwt:
+  secret-key: Z5PAzkuK609aS07LHJTtUDWEpz5ua2SE6BXKPxqbYWY
