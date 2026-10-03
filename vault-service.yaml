@@ -8,3 +8,11 @@ spring:
 vault:
   master-key: sKrpKUIxLLE1j9MBbYnPknL62c8kEbrBWflPVY7bxt6
   random-key-length: 12
+
+resilience4j:
+  thread-pool-bulkhead:
+    instances:
+      vault-card-processor:
+        core-thread-pool-size: 5
+        max-thread-pool-size: 10
+        queue-capacity: 20
