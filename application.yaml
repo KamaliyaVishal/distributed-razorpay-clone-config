@@ -40,6 +40,15 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "com.*"
+    
+  # OpenFeign client timeout cofiguration
+  cloud.openfeign.client.config:
+    merchant-service:
+      connectTimeout: 5000
+      readTimeout: 7000
+    vault-service:
+      connectTimeout: 5000
+      readTimeout: 7000
 
 # Eureka server Configurations
 eureka:
