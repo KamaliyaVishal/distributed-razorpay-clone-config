@@ -7,6 +7,8 @@ spring:
   
   # PostgresSQL Database Connection Settings
   datasource:
+    hikari:
+      maximum-pool-size: 50
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
