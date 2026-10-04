@@ -80,7 +80,20 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
-      
+
+# Feign client global network configurations
+# Enable HC5 pooling and 5s fail-fast timeouts to prevent thread starvation and support 10k RPS load testing
+feign:
+  httpclient:
+    # Enable Apache HttpClient 5 for advanced connection pooling and HTTP/2 support
+    hc5:
+      enabled: true
+  client:
+    config:
+      default:
+        # Set fallback/global timeout thresholds across all Feign clients
+        connectTimeout: 5000
+        readTimeout: 5000    
 
 # Logging Configurations
 logging:
