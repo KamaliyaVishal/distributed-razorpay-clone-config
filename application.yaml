@@ -132,6 +132,7 @@ spring:
   cloud:
     discovery:
       enabled: false
+  # Spring default allows only 1 thread per scheduler; increased to 4 to support multiple concurrent scheduled tasks running across services.
   task:
     scheduling:
       pool:
