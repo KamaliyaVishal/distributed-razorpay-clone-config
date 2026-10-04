@@ -7,6 +7,10 @@ spring:
   
   # PostgresSQL Database Connection Settings
   datasource:
+    # The default HikariCP maximum pool size in Spring Boot is 10 connections.
+    # During 10k RPS load testing, we need to increase the PostgreSQL connection pool 
+    # to 300. To leverage these database connections, we must also increase the 
+    # HikariCP pool size accordingly.    
     hikari:
       maximum-pool-size: 50
     username: postgres
