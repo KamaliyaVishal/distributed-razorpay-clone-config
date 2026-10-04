@@ -27,3 +27,17 @@ resilience4j:
       vault-service:
         max-attempts: 2
         wait-duration: 500ms
+
+---
+
+# --- indicates the start of a new YAML document (enables multi-document files)
+# This configuration will used when K8S profile is active
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
+  datasource:
+    url: jdbc:postgresql://postgres.razorpay-core.svc.cluster.local:5432/razorpay-payment-db
+    username: payment_user
+    password: ${PAYMENT_DB_PASSWORD}

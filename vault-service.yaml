@@ -16,3 +16,20 @@ resilience4j:
         core-thread-pool-size: 5
         max-thread-pool-size: 10
         queue-capacity: 20
+
+---
+
+# --- indicates the start of a new YAML document (enables multi-document files)
+# This configuration will used when K8S profile is active
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
+  datasource:
+    url: jdbc:postgresql://postgres.razorpay-core.svc.cluster.local:5432/razorpay-vault-db
+    username: vault_user
+    password: ${VAULT_DB_PASSWORD}
+
+vault:
+  master-key: ${VAULT_MASTER_KEY}
